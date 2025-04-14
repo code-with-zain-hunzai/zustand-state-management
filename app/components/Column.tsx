@@ -82,7 +82,7 @@ export default function Column({
     <div
       className={`flex flex-col rounded-xl p-4 w-full md:w-1/3 h-[80vh] transition-all duration-200 border-2 shadow-lg ${
         isOver
-          ? "bg-blue-800/30 border-dashed border-blue-500"
+          ? "bg-blue-800/30 border-dashed"
           : `${getColumnStyle()}`
       }`}
       onDrop={handleDrop}
