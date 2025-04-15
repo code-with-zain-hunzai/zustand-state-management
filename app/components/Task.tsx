@@ -21,13 +21,15 @@ export default function Task({
         return "border-blue-500";
       case "IN_PROGRESS":
         return "border-yellow-500";
+      case "IN_REVIEW":
+        return "border-purple-500";
       case "DONE":
         return "border-green-500";
       default:
         return "border-gray-500";
     }
   };
-  
+
   const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
     dragTask(id);
   };
@@ -38,8 +40,9 @@ export default function Task({
       draggable
       onDragStart={handleDragStart}
     >
-        <button 
-          className="flex text-red-500 hover:text-red-700 transition-colors justify-end items-end w-full"
+      <div className="flex justify-end">
+        <button
+          className="text-red-500 hover:text-red-700 transition-colors"
           onClick={() => removeTask(id)}
         >
           <svg
@@ -57,6 +60,8 @@ export default function Task({
             />
           </svg>
         </button>
+      </div>
+
       <h3 className="text-lg font-bold text-gray-800">{title}</h3>
       <p className="text-gray-600 text-sm mt-1">{description}</p>
       <div className="flex justify-between items-center mt-3">

@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { v4 as uuid } from "uuid";
 import { persist } from "zustand/middleware";
 
-export type Status = "TODO" | "IN_PROGRESS" | "DONE";
+export type Status = "TODO" | "IN_PROGRESS" |"IN_REVIEW" | "DONE";
 
 export type Task = {
   id: string;
