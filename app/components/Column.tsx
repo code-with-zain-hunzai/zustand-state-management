@@ -54,6 +54,8 @@ export default function Column({
         return "bg-gradient-to-br from-[#1e293b] to-[#334155] border-slate-600";
       case "IN_PROGRESS":
         return "bg-gradient-to-br from-[#3b2f2f] to-[#5c4033] border-yellow-700";
+      case "IN_REVIEW":
+        return "bg-gradient-to-br from-[#4c1d95] to-[#6b21a8] border-purple-700";
       case "DONE":
         return "bg-gradient-to-br from-[#1f4037] to-[#99f2c8] border-emerald-700";
       default:
@@ -67,6 +69,8 @@ export default function Column({
         return "bg-gradient-to-r from-indigo-800 to-indigo-600 text-white";
       case "IN_PROGRESS":
         return "bg-gradient-to-r from-yellow-800 to-amber-700 text-white";
+      case "IN_REVIEW":
+        return "bg-gradient-to-r from-[#6b21a8] to-[#9333ea] text-white";
       case "DONE":
         return "bg-gradient-to-r from-emerald-800 to-emerald-600 text-white";
       default:
@@ -81,9 +85,7 @@ export default function Column({
   return (
     <div
       className={`flex flex-col rounded-xl p-4 w-full md:w-1/3 h-[80vh] transition-all duration-200 border-2 shadow-lg ${
-        isOver
-          ? "bg-blue-800/30 border-dashed"
-          : `${getColumnStyle()}`
+        isOver ? "bg-blue-800/30 border-dashed" : `${getColumnStyle()}`
       }`}
       onDrop={handleDrop}
       onDragOver={handleDragOver}
